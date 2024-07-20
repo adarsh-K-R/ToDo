@@ -1,0 +1,22 @@
+<div class="filter-container">
+    <div class="filter-item">
+        <label for="dueDateFilter">Due Date</label>
+        <input type="date" id="dueDateFilter" (change)="onDueDateChange($event)">
+    </div>
+    <div class="filter-item">
+        <label for="priorityFilter">Priority</label>
+        <div class="multiselect" id="priorityFilter" (keypress)="toggleDropdown($event)" (click)="toggleDropdown($event)">
+            <div class="selected-options" id="priority-filter">{{ selectedPriorities.length === 0 ? 'Priority' : selectedPriorities.join(", ") }}</div>
+            <div class="dropdown-content">
+                <label *ngFor="let option of options">
+                    <input type="checkbox" [value]="option" (change)="updateSelectedOptions($event)">
+                    <span>{{ option }}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="filter-buttons">
+        <input type="button" class="submit" (click)="handle()" value="Submit">
+        <input type="button" class="reset" (click)="handleReset()" value="Reset">
+    </div>
+</div>

@@ -1,0 +1,201 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 1% 8% 0 8%;
+    gap: 0.9em;
+}
+
+.banner {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0.125em 0.125em 0.625em 0 #0000001A;
+    border-radius: 1em;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1em 1em 0.8em 0.5em;
+}
+
+.banner-img {
+    height: 11.5em;
+    margin-bottom: -3.1em;
+}
+
+.banner-text {
+    padding-left: 1em;
+}
+
+.banner h1 {
+    font-size: 2.2em;
+}
+
+.banner h6 {
+    margin-top: 1em;
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+.tasks-wrapper {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-areas: 
+        "heading heading"
+        "main side";
+    gap: 1em;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: heading;
+    text-wrap: nowrap;
+}
+
+.heading h1 {
+    font-size: 1.3em;
+}
+
+.heading h6 {
+    font-weight: 300;
+    color: #BA5112;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.tasks {
+    grid-area: main;
+}
+
+.stats {
+    grid-area: side;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    align-items: flex-end;
+}
+
+.heading h5 {
+    font-weight: 300;
+    font-size: 0.9em;
+    padding-top: 0.3em;
+}
+
+.tasks-heading {
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+    align-items: end;
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.stat-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9em;
+    width: 90%;
+}
+
+@media (max-width: 1000px) {
+    .banner {
+        height: 140px;
+        padding-right: 0;
+    }
+
+    .banner-text {
+        font-size: 12px;
+        padding-left: 1em;
+    }
+
+    .banner img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 750px) {
+    .banner {
+        height: 110px;
+        padding-right: 0;
+    }
+
+    .banner img {
+        height: 120px;
+    } 
+    
+    .banner-text {
+        font-size: 10px;
+    }
+
+    .banner-text h6 {
+        font-size: 10px;
+    }
+    
+    .tasks-wrapper {
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "side"
+            "heading"
+            "main";
+    }
+
+    .stats {
+        align-items: center;
+    }
+
+    .stat-boxes {
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .banner {
+        height: 90px;
+        padding-right: 0;
+    }
+
+    .banner-text {
+        font-size: 10px;
+        padding-left: 1em;
+    }
+
+    .banner img {
+        height: 100px;
+    }
+}
+
+@media (max-width: 470px) {
+    :host {
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow-x: hidden;
+    }
+
+    .banner {
+        height: 130px;
+    }
+
+    .banner-text {
+        font-size: 7.5px;
+        text-wrap: nowrap;
+    }
+
+    .banner img {
+        height: 130px;
+    }
+
+    .tasks-heading {
+        gap: 1em;
+    }
+
+    .heading {
+        margin-top: 10px;
+    }
+}

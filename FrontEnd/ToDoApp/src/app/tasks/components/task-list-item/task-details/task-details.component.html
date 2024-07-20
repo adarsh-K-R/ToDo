@@ -1,0 +1,33 @@
+<div class="container-details" *ngIf="!isEditClicked" [ngClass]="task.isCompleted?'completed': ''">
+    <div class="wrapper">
+        <div class="heading">
+            <h1 title="{{ task.name }}">{{ task.name }}</h1>
+            <p>Added {{ addedAgo }}</p>
+            <p *ngIf="!isCompleted">{{ dueTime }}</p>
+        </div>
+    
+        <div class="details">
+            <h6>Description</h6>
+            <p>{{ task.details }}</p>
+        </div>
+    </div>
+
+    <div class="actions">
+        <img (keypress)="toggleStatus()" (click)="toggleStatus()" [src]="getChecboxSrc()" alt="unchecked">
+        <div class="right">
+            <img (click)="edit()" (keypress)="edit()" *ngIf="!isCompleted" src="../../../../assets/images/task-details/edit-icon.svg" alt="edit">
+            <img (keypress)="delete()" (click)="delete()" [src]="getDeleteSrc()" alt="delete">
+        </div>
+    </div>
+</div>
+
+<div class="container-edit" *ngIf="isEditClicked">
+    <form class="add-task-form" (ngSubmit)="updateTask()" [formGroup]="updateTaskForm">
+        <input class="title" name="title" formControlName="title" type="text" placeholder="Add Title">
+        <textarea class="detail" rows="4" name="detail" formControlName="detail" type="text" placeholder="Add Description"></textarea>
+        <div class="form-buttons">
+            <input (keypress)="cancel()" (click)="cancel()" type="reset" value="Cancel">
+            <input type="submit" value="Update">
+        </div>
+    </form>
+</div>

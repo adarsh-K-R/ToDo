@@ -1,0 +1,32 @@
+<h1 class="logo">To-Do App</h1>
+
+<button class="add-task" (click)="openModal()">
+    <span>Add Task</span>
+    <img alt="add" src="../../../../assets/images/side-nav/add-button.svg">
+</button>
+
+<a class="nav-item" 
+    (click)="selectComponent('dashboard')" 
+    routerLinkActive="active" 
+    [routerLink]="['/']"
+    [routerLinkActiveOptions]="{exact: true}">
+    Dashboard
+</a>
+
+<a class="nav-item" 
+    (click)="selectComponent('active')"
+    routerLinkActive="active"  
+    [routerLink]="['/active']"
+    [routerLinkActiveOptions]="{exact: true}">
+    Active
+</a>
+
+<a class="nav-item" 
+    (click)="selectComponent('completed')" 
+    routerLinkActive="active"  
+    [routerLink]="['/completed']"
+    [routerLinkActiveOptions]="{exact: true}">
+    Completed
+</a>
+
+<app-add-task [isOpen]="isModalOpen" (close)="closeModal()"></app-add-task>

@@ -1,0 +1,27 @@
+<div class="container">
+    <h1 class="logo">To-Do App</h1>
+    
+    <button class="add-task" (click)="openModal()">
+        <span>Add Task</span>
+        <img alt="add" src="../../../../assets/images/side-nav/add-button.svg">
+    </button>
+
+    
+    <h1 class="current-component">{{selectedComponent}}</h1>
+    <button (click)="signout()" class="signout">
+        <span>Sign out</span>
+        <img alt="logout" src="../../../../assets/images/header/logout.svg">
+    </button>
+</div>
+
+<app-add-task [isOpen]="isModalOpen" (close)="closeModal()"></app-add-task>
+
+<div class="dropdown">
+    <div class="dropdown-btn" (keypress)="toggleDropdown()" (click)="toggleDropdown()">
+      <a>{{ selectedComponent }}</a>
+      <img src="../../../../assets/images/header/down-arrow.svg" alt="down arrow">
+    </div>
+    <div class="dropdown-content" *ngIf="isDropdownOpen">
+      <a *ngFor="let link of unUsedLink" (click)="selectOption(link)" [routerLink]="link.link">{{ link.optionName }}</a>
+    </div>
+</div>

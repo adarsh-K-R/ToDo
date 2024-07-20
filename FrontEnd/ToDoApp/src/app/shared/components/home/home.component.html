@@ -1,0 +1,6 @@
+<app-side-nav (componentSelected)="onComponentSelected($event)"></app-side-nav>
+<div class="container">
+    <app-header [selectedComponent]="selectedComponent"></app-header>
+    <app-dashboard *ngIf="selectedComponent === 'dashboard'" ></app-dashboard>
+    <router-outlet *ngIf="selectedComponent !== 'dashboard'"></router-outlet>
+</div>

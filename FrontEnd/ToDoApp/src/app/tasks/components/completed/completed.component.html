@@ -1,0 +1,11 @@
+<div class="heading">
+    <h1>Completed Tasks</h1>
+    <p>{{ formattedDate }}</p>
+</div>
+<ng-container *ngFor="let task of tasks">
+    <app-task-list-item [task]="task" 
+    [class.show-popup]="selectedTask === task"
+    (taskUpdated)="handleTaskUpdated($event)" 
+    (deleteThis)="delete($event)"
+    (togglePopup)="togglePopup($event)"></app-task-list-item>
+</ng-container>

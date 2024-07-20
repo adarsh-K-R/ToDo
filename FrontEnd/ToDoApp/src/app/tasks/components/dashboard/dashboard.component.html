@@ -1,0 +1,37 @@
+<div class="banner">
+    <div class="banner-text">
+        <h1>Hello, Beautiful Human!</h1>
+        <h6>What do you want to do today?</h6>
+    </div>
+    <img src="../../../../assets/images/dashboard/banner-image.png" alt="banner-img" class="banner-img">
+</div>
+
+<app-filters (resetFilters)="reset()" (filtersChanged)="onFiltersChanged($event)"></app-filters>
+<div class="tasks-wrapper">
+    <div class="heading">
+        <h1>Today's Tasks</h1>
+        <div class="tasks-heading">
+            <h6 (keypress)="deleteAll()" (click)="deleteAll()">Delete All</h6>
+            <h5>{{ formattedDate }}</h5>
+        </div>
+    </div>
+    <div class="tasks">
+        <div class="tasks-list">
+            <ng-container *ngFor="let task of filteredTasks">
+              <app-task-list-item 
+                [task]="task" 
+                [class.show-popup]="selectedTask === task"
+                (taskUpdated)="handleTaskUpdated($event)" 
+                (deleteThis)="delete($event)"
+                (togglePopup)="togglePopup($event)"
+              ></app-task-list-item>
+            </ng-container>
+          </div>
+    </div>
+    <div class="stats">
+        <div class="stat-boxes">
+            <app-stat-box [message]="'Completed tasks'" [statType]="'completed'" [percentage]="completedPercent"></app-stat-box>
+            <app-stat-box [message]="'Active tasks'" [statType]="'active'" [percentage]="activePercent"></app-stat-box>
+        </div>
+    </div>
+</div>

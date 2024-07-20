@@ -1,0 +1,89 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(97, 97, 97, 0.5);
+    backdrop-filter: blur(0.375em);
+    z-index: 999999;
+}
+
+.container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: white;
+    height: 22em;
+    width: 40em;
+    padding: 2em;
+    border-radius: 0.75em;
+    box-shadow: 0.25em 0.25em 0.5em 0 #00000026;
+    z-index: 9999999;
+}
+
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.title, .details, .dueDate, .priority {
+    border: none;
+    border-radius: 0.75em;
+    box-shadow: 0.125em 0.125em 0.375em 0 #0000001A;
+    padding: 1em;
+}
+
+.details {
+    resize: none;
+}
+
+.options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.priority {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: white url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path fill="black" d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1em center;
+    background-size: 1em;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.form-buttons input {
+    font-size: 0.8em;
+    border: none;
+    border-radius: 0.75em;
+    box-shadow: 0.125em 0.125em 0.375em 0 #0000001A;
+    padding: 0.7em 2em;
+    cursor: pointer;
+}
+
+.form-buttons input[type=submit] {
+    background-color: #EDB046;
+}
+
+.form-buttons input[type=reset] {
+    background-color: white;
+    border: 0.125em solid #EDB046;
+    margin-right: 0.7em;
+}
+
+@media (max-width: 500px) {
+    .container {
+        height: 22em;
+        width: 20em;
+    }
+}

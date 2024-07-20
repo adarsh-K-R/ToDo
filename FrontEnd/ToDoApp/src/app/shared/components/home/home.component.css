@@ -1,0 +1,30 @@
+:host {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+app-side-nav {
+    grid-column: 1 / 2;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
+    grid-column: 2 / 3;
+}
+
+@media (max-width: 750px) {
+    :host {
+        grid-template-columns: 100%;
+    }
+
+    app-side-nav {
+        display: none;
+    }
+
+    .container {
+        grid-column: 1 / 2;
+    }
+}

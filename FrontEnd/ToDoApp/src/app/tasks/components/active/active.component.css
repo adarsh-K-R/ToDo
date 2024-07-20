@@ -1,0 +1,23 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8em 5em;
+    gap: 1.5em;
+}
+
+.heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 0.5em;
+}
+
+.heading h1 {
+    font-size: 1.5em;
+}
+
+.heading p {
+    font-weight: 300;
+    font-size: 0.8em;
+}

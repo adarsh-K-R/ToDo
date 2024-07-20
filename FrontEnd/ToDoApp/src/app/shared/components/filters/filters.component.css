@@ -1,0 +1,130 @@
+.filter-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+    padding-top: 1em;
+}
+
+.filter-item, .filter-buttons {
+    display: flex;
+    align-items: flex-start;
+    gap: 1em;
+    align-items: center;
+}
+
+.filter-item label {
+    color: #455573;
+    margin-bottom: 5px;
+    text-wrap: nowrap;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-container input[type="date"],
+.filter-container input[type="button"] {
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.9em;
+    width: 100%;
+}
+
+.filter-container input[type="date"] {
+    color: #455573;
+    height: 30px;
+}
+
+.filter-container input[type="button"] {
+    width: 100%;
+    background-color: #f0f0f0;
+    color: #455573;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 30px;
+}
+
+.filter-container input[type="button"]:hover {
+    background-color: #e0e0e0;
+}
+
+.filter-container input[type="button"].submit {
+    background-color: #BA5112; 
+    color: white;
+}
+
+.filter-container input[type="button"].reset {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.selected-options {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#priorityFilter {
+    width: 100%;
+    padding-right: 25px;
+    background-position: calc(100% - 10px);
+    height: 30px;
+}
+
+.multiselect {
+    text-transform: capitalize;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 4px 2px 0 7px;
+    border-radius: 5px;
+    background-color: white;
+    color: #455573;
+    font-size: 0.9em;
+    background-image: url("../../../../assets/images/dashboard/arrow-down.png");
+    background-size: 9px;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    height: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-color: #f9f9f9;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    border-radius: 5px;
+    left: 0;
+    top: 100%;
+    font-size: 0.9em;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdown-content label {
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+}
+
+.dropdown-content label:hover {
+    background-color: #BA5112;
+    color: white;
+}
+
+.dropdown-content label input {
+    margin-right: 8px;
+}
+
+.dropdown-content.show {
+    display: block;
+}

@@ -1,0 +1,50 @@
+:host {
+    position: relative;
+    width: 100%;
+    cursor: default;
+}
+
+.item-wrapper {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0.125em 0.125em 0.375em 0 #0000001A;
+    border-radius: 0.75em;
+    gap: 2em;
+    padding: 1.1em;
+    align-items: center;
+}
+
+.item-wrapper img {
+    height: 1.5em;
+    cursor: pointer;
+}
+
+.item-wrapper p {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1em;
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.completed {
+    background-color: #EDB046;
+}
+
+.task sup {
+    text-transform: capitalize;
+}
+
+app-task-details {
+    display: none;
+}
+
+:host.show-popup {
+    app-task-details {
+        display: block;
+    }
+}

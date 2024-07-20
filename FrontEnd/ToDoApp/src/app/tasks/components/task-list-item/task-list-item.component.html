@@ -1,0 +1,11 @@
+<div [ngClass]="getStatus()" class="item-wrapper" (keypress)="toggleStatus()" (click)="toggleDetailsPopup()">
+    <img alt="checkbox icon" [src]="getSrc()" (keypress)="toggleStatus()" (click)="toggleStatus()">
+    <p class="task" title="{{ task.name }}">
+      {{ task.name }}
+      <sup>
+        {{ task.priority }} Priority
+      </sup>
+    </p>
+  </div>
+  <app-task-details [task]="task" (deleteThis)="handleDelete()" (toggle)="toggleStatus()" (newTask)="handleUpdatedTask($event)"></app-task-details>
+  

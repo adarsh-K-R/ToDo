@@ -1,0 +1,7 @@
+<div *ngIf="show" class="toast toast-{{ toastType }}">
+    <div class="toast-content-wrapper">
+        <div class="toast-icon"></div>
+        <div class="toast-message">{{ message }}</div>
+        <div class="toast-progress" [style.animationDuration]="duration + 'ms'"></div>
+    </div>
+</div>

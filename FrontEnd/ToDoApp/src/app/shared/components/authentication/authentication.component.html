@@ -1,0 +1,50 @@
+<div class="wrapper">
+    <app-toast 
+        [message]="toastMessage" 
+        [toastType]="toastType" 
+        [duration]="toastDuration" 
+        [show]="showToast">
+    </app-toast>
+    <div class="container">
+        <div [ngClass]="toggleProperty ? 'flipped': ''" class="card">
+            <div class="front">
+                <div class="signin-heading">
+                    <h1>To-Do App</h1>
+                    <h5>Start organizing your life day by day</h5>
+                </div>
+    
+                <form class="signin-form" (ngSubmit)="signin()" [formGroup]="signinForm">
+                    <input placeholder="Enter your username" type="text" name="signinUsername" formControlName="username">
+                    <div class="signin-password-wrapper">
+                        <input id="signin-form-password" placeholder="Enter your password" [type]="signinPasswordType" name="signinPassword" formControlName="password">
+                        <img [src]="imgSrcSignIn" alt="Eye Icon" (keypress)="toggleSigninPassword()" (click)="toggleSigninPassword()">
+                    </div>
+                    <div class="signin-options-wrapper">
+                        <button type="submit">Sign In</button>
+                        <p class="signin-message">Don't have an account? Create <span class="signin-here" (keypress)="toggle()" (click)="toggle()"> here.</span></p>
+                    </div>
+                </form>
+                
+            </div>
+            <div class="back">
+                <div class="signup-heading">
+                    <h1>To-Do App</h1>
+                    <h5>Start organizing your life day by day</h5>
+                </div>
+    
+                <form class="signup-form" (ngSubmit)="signup()" [formGroup]="signupForm">
+                    <input placeholder="Username" type="text" name="signupUsername" formControlName="username">
+                    <div class="signup-password-wrapper">
+                        <input id="signup-form-password" placeholder="Password" [type]="signupPasswordType" name="signupPassword" formControlName="password">
+                        <img [src]="imgSrcSignUp" alt="Eye Icon" (keypress)="toggleSignupPassword()" (click)="toggleSignupPassword()">
+                    </div>
+                    <div class="signin-options-wrapper">
+                        <button type="submit">Sign Up</button>
+                        <p class="signup-message">Already have an account? Sign in <span class="signup-here" (keypress)="toggle()" (click)="toggle()"> here.</span></p>
+                    </div>
+                </form>
+    
+            </div>
+        </div>
+    </div>
+</div>

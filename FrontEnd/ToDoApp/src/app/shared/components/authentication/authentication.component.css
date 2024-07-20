@@ -1,0 +1,212 @@
+:host {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background-color: #edb04607;
+    position: relative;
+    overflow: hidden;
+}
+
+:host::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../../assets/images/authentication/auth-background.png');
+    background-size: contain;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    transform-origin: center;
+    z-index: -1;
+}
+
+.wrapper {
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+    
+.container {
+    width: 45em;
+    height: 30em;
+    display: block;
+    position: absolute;
+    perspective: 50em;
+    border-radius: 0.25em;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 1.25em;
+    box-shadow: 0.25em 0.25em 1em rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.25em;
+    display: grid;
+    place-items: center;
+}
+
+.card .front {
+    background-color: white;
+    color: black
+}
+
+.card .back {
+    background-color: #EDB046;
+    color: white;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.signin-here {
+    cursor: pointer;
+    color: #EDB046;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.signup-here {
+    cursor: pointer;
+    color: #BA5112;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.signin-heading h1,
+.signup-heading h1 {
+    font-family: "Lexend", sans-serif;
+    font-weight: 700;
+    font-size: 2.7em;
+}
+
+.signin-heading h1 {
+    color: #BA5112
+}
+
+.signin-heading h5,
+.signup-heading h5 {
+    padding-top: 0.625em;
+    font-weight: 400;
+    font-family: "Lexend", sans-serif;
+    font-size: 0.7em;
+    width: 100%;
+    text-align: center;
+}
+
+.signin-form, 
+.signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.875em;
+}
+
+.signin-form button,
+.signup-form button {
+    width: max-content;
+    border: none;
+    padding: 0.9375em 2.1875em;
+    border-radius: 0.375em;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.signin-form button {
+    background-color: #EDB046;
+}
+
+.signup-form button {
+    background-color: #BA5112;
+    color: white;
+}
+
+.signin-form input,
+.signup-form input {
+    padding: 1.625em 2.25em 1.625em 2.25em;
+    width: 80%;
+    height: 2.5em;
+    background: #FFFFFF;
+    box-shadow: 0.125em 0.125em 0.25em rgba(0, 0, 0, 0.1);
+    border-radius: 0.75em;
+    border: none;
+    font-size: 0.85em;
+}
+
+.signin-message,
+.signup-message {
+    padding-top: 0.9375em;
+    font-weight: 400;
+    font-family: "Lexend", sans-serif;
+    font-size: 0.7em;
+}
+
+.signin-options-wrapper,
+.signup-options-wrapper {
+    text-align: center;
+    padding-top: 0.9375em;
+}
+
+#signin-form-password {
+    width: 100%;
+}
+
+#signup-form-password {
+    width: 100%;
+}
+
+.signin-password-wrapper,
+.signup-password-wrapper {
+    position: relative;
+    width: 80%;
+}
+
+.signin-password-wrapper input[type=password]::-ms-reveal,
+.signup-password-wrapper input[type=password]::-ms-reveal
+{
+    display: none;
+}
+
+.signin-password-wrapper img,
+.signup-password-wrapper img
+ {
+    height: 1.7em;
+    position: absolute;
+    right: 1.25em;
+    top: 0.625em;
+}
+
+@media (max-width: 750px) {
+    .container {
+        width: 35em;
+        height: 25em;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 25em;
+        height: 25em;
+    }
+}

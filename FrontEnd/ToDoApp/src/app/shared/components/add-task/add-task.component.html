@@ -1,0 +1,20 @@
+<div class="overlay" *ngIf="isOpen"></div>
+<div class="container" *ngIf="isOpen">
+    <form class="add-task-form" (ngSubmit)="addTask()" [formGroup]="addTaskForm">
+        <input class="title" name="title" formControlName="title" type="text" placeholder="Add Title">
+        <textarea class="details" rows="4" name="detail" formControlName="detail" type="text" placeholder="Add Description"></textarea>
+        <div class="options-container">
+            <input title="DueDate" class="dueDate" name="dueDate" formControlName="dueDate" type="date" [attr.min]="minDate">
+            <select class="priority" name="priority" formControlName="priority">
+                <option value="" disabled>Choose priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <div class="form-buttons">
+            <input (keypress)="closeModal()" (click)="closeModal()" type="reset" value="Cancel">
+            <input type="submit" value="Save">
+        </div>
+    </form>
+</div>

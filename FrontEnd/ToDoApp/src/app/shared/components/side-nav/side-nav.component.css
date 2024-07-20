@@ -1,0 +1,57 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+    padding: 0.3em 0;
+    font-size: 1.7em;
+    color: #BA5112;
+    font-weight: 800;
+    margin-top: 0.2em;
+    text-wrap: nowrap;
+}
+
+.add-task {
+    border: none;
+    background-color: white;
+    box-shadow: 0 0 1.25em 0 #0000001A;
+    border-radius: 0.75em;
+    margin: 2.3em 0;
+    width: max-content;
+    padding: 0.8em 1.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    gap: 1em;
+}
+
+.add-task span {
+    font-weight: 600;
+    font-size: 1.05em;
+    text-wrap: nowrap;
+}
+
+.add-task img {
+    width: 1.5625em;
+}
+
+.nav-item {
+    text-decoration: none;
+    width: 100%;
+    color: black;
+    margin: 0.625em 0;
+    text-align: center;
+    padding: 0.6em;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.active {
+    background-color: #EDB046;
+}

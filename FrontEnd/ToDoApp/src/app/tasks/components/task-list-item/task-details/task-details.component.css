@@ -1,0 +1,130 @@
+:host {
+    display: block;
+    box-shadow: 0.125em 0.125em 0.625em 0 #0000001A;
+    height: 11.8em;
+    width: 17.5em;
+    border-radius: 0.75em;
+    position: absolute;
+    top: 1em;
+    right: 2em;
+    background-color: white;
+    z-index: 999;
+}
+
+.container-details {
+    padding: 1em 1.3em;
+    border-radius: 0.75em;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0.125em 0.125em 0.625em 0 #0000001A;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.completed {
+    background-color: #EDB046;
+}
+
+.completed .heading p {
+    color: #BA5112;
+    font-weight: 600;
+}
+
+.details {
+    padding-top: 0.7em;
+}
+
+.details p {
+    overflow-y: auto;
+    width: 100%;
+    word-wrap: break-word;
+    max-height: 4.8em;
+    font-size: 0.7em;
+    padding-top: 0.5em;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5em 0.7em 0 0;
+}
+
+.heading h1 {
+    font-size: 1.1em;
+    width: 100%;
+    height: fit-content;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.heading p {
+    font-weight: 300;
+    font-size: 0.6em;
+    color: #B5B5B5;
+    padding-top: 0.4em;
+}
+
+.details h6 {
+    font-size: 0.8em;
+}
+
+
+
+.actions img {
+    height: 1.2em;
+    cursor: pointer;
+}
+
+.right {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8em;
+}
+
+.container-edit {
+    padding: 1em;
+}
+
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.title, .detail {
+    font-size: 0.8em;
+    border: none;
+    border-radius: 1.125em;
+    box-shadow: 0.0625em 0.0625em 0.1875em 0 #0000001A;
+    padding: 0.5em;
+    resize: none;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.form-buttons input {
+    font-size: 0.7em;
+    border: none;
+    border-radius: 0.625em;
+    box-shadow: 0.0625em 0.0625em 0.1875em 0 #0000001A;
+    padding: 0.4em 1em;
+    cursor: pointer;
+}
+
+.form-buttons input[type=submit] {
+    background-color: #EDB046;
+}
+
+.form-buttons input[type=reset] {
+    background-color: white;
+    border: 0.125em solid #EDB046;
+    margin-right: 0.4em;
+}
